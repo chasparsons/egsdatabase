@@ -1,0 +1,39 @@
+Commands Summary.txt
+# commands used to create project in Docker project
+
+# create a Dockerfile for settings
+touch Dockerfile
+touch Gemfile
+
+# create a docker-compose.yml file for settings
+touch docker-compose.yml
+
+# Run docker-compose to create new rails project
+docker-compose run web rails new . --force --database=postgresql
+
+docker-compose build
+docker-compose up
+
+
+# commands for Rails app creation
+
+docker-compost run web rails generate scaffold Surgeons firstname:string lastname:string email:string 
+
+docker-compose run web rails generate scaffold Patient mrn:string dob:date 
+
+docker-compose run web rails generate scaffold ICD10Code code:string description:string 
+
+docker-compose run web rails generate scaffold CPTCodes category:string code:string description:string
+
+docker-compose run web rails generate scaffold Operations or_date:date surgeon:references patient:references
+
+
+
+# create the States scaffold
+docker-compose run web rails generate scaffold States abbrev:string description:string
+
+
+docker-compose run web rake db:migrate
+
+# rake seed command to populate database lookup tables
+docker-compose run web rake db:seed

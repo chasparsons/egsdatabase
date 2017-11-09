@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Or date:</strong>
+  <%= @operation.or_date %>
+</p>
+
+<p>
+  <strong>Surgeon:</strong>
+  <%= @operation.surgeon %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @operation.patient %>
+</p>
+
+<%= link_to 'Edit', edit_operation_path(@operation) %> |
+<%= link_to 'Back', operations_path %>

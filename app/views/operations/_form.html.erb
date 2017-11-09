@@ -1,0 +1,32 @@
+<%= form_for(operation) do |f| %>
+  <% if operation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(operation.errors.count, "error") %> prohibited this operation from being saved:</h2>
+
+      <ul>
+      <% operation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :or_date %>
+    <%= f.date_select :or_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :surgeon_id %>
+    <%= f.text_field :surgeon_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :patient_id %>
+    <%= f.text_field :patient_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

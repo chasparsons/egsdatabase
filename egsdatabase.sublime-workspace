@@ -1,0 +1,272 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"data",
+				"data_hash"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "db/seeds.rb",
+			"settings":
+			{
+				"buffer_size": 761,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Commands Summary.txt\n# commands used to create project in Docker project\n\n# create a Dockerfile for settings\ntouch Dockerfile\ntouch Gemfile\n\n# create a docker-compose.yml file for settings\ntouch docker-compose.yml\n\n# Run docker-compose to create new rails project\ndocker-compose run web rails new . --force --database=postgresql\n\ndocker-compose build\ndocker-compose up\n\n\n# commands for Rails app creation\n\ndocker-compost run web rails generate scaffold Surgeons firstname:string lastname:string email:string \n\ndocker-compose run web rails generate scaffold Patient mrn:string dob:date \n\ndocker-compose run web rails generate scaffold ICD10Code code:string description:string \n\ndocker-compose run web rails generate scaffold CPTCodes category:string code:string description:string\n\ndocker-compose run web rails generate scaffold Operations or_date:date surgeon:references patient:references\n\n\n\n# create the States scaffold\ndocker-compose run web rails generate scaffold States abbrev:string description:string\n\n\ndocker-compose run web rake db:migrate\n\n# rake seed command to populate database lookup tables\ndocker-compose run web rake db:seed\n",
+			"file": "Commands Summary.txt",
+			"file_size": 330,
+			"file_write_time": 131546898510000000,
+			"settings":
+			{
+				"buffer_size": 1142,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "Commands Summary.txt"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/charlesparkinson/development/egsdatabase",
+		"/Users/charlesparkinson/development/egsdatabase/app",
+		"/Users/charlesparkinson/development/egsdatabase/app/mailers",
+		"/Users/charlesparkinson/development/egsdatabase/app/models",
+		"/Users/charlesparkinson/development/egsdatabase/app/views",
+		"/Users/charlesparkinson/development/egsdatabase/app/views/cpt_codes",
+		"/Users/charlesparkinson/development/egsdatabase/config",
+		"/Users/charlesparkinson/development/egsdatabase/config/environments",
+		"/Users/charlesparkinson/development/egsdatabase/db",
+		"/Users/charlesparkinson/development/egsdatabase/db/migrate",
+		"/Users/charlesparkinson/development/egsdatabase/tmp",
+		"/Users/charlesparkinson/development/egsdatabase/tmp/pids"
+	],
+	"file_history":
+	[
+		"/Users/charlesparkinson/development/egsdatabase/config/cpt_all.csv",
+		"/Users/charlesparkinson/development/egsdatabase/config/cases_html.html",
+		"/Users/charlesparkinson/development/egsdatabase/Gemfile",
+		"/Users/charlesparkinson/development/egsdatabase/config/spring.rb",
+		"/Users/charlesparkinson/development/egsdatabase/config/state_lookup.csv",
+		"/Users/charlesparkinson/development/egsdatabase/db/schema.rb",
+		"/Users/charlesparkinson/development/egsdatabase/config/database.yml"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\""
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "db/seeds.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 761,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								761,
+								761
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Commands Summary.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								780,
+								780
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Commands Summary.txt",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "egsdatabase.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 281.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
