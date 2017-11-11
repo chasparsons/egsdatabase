@@ -9,6 +9,18 @@
   </head>
 
   <body>
+  	<div>
+    	<%= link_to 'Surgeons', surgeons_path %>
+    	&nbsp; | &nbsp;
+    	<%= link_to 'Patients', patients_path %>
+    	&nbsp; | &nbsp;
+    	<%= link_to 'Operations', operations_path %>
+    	&nbsp; | &nbsp;
+    	<%= link_to 'CPT Codes', cpt_codes_path %>
+    </div>
     <%= yield %>
+    <div>
+    	Footer
+    </div>
   </body>
 </html>

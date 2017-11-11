@@ -27,6 +27,8 @@ docker-compose run web rails generate scaffold CPTCodes category:string code:str
 
 docker-compose run web rails generate scaffold Operations or_date:date surgeon:references patient:references
 
+docker-compose run web rails generate scaffold OpCodeLink has_many:cptcode order:integer 
+
 
 
 # create the States scaffold
@@ -37,3 +39,8 @@ docker-compose run web rake db:migrate
 
 # rake seed command to populate database lookup tables
 docker-compose run web rake db:seed
+
+
+
+#still need to make sure deletes are cascading properly
+
