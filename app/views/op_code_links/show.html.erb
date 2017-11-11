@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Has many:</strong>
+  <%= @op_code_link.has_many %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @op_code_link.order %>
+</p>
+
+<%= link_to 'Edit', edit_op_code_link_path(@op_code_link) %> |
+<%= link_to 'Back', op_code_links_path %>

@@ -16,8 +16,8 @@
     <% @operations.each do |operation| %>
       <tr>
         <td><%= operation.or_date %></td>
-        <td><%= operation.surgeon %></td>
-        <td><%= operation.patient %></td>
+        <td><%= operation.surgeon.name_for_display %></td>
+        <td><%= operation.patient.mrn %></td>
         <td><%= link_to 'Show', operation %></td>
         <td><%= link_to 'Edit', edit_operation_path(operation) %></td>
         <td><%= link_to 'Destroy', operation, method: :delete, data: { confirm: 'Are you sure?' } %></td>

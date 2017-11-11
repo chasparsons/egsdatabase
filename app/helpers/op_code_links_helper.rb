@@ -1,0 +1,2 @@
+module OpCodeLinksHelper
+end

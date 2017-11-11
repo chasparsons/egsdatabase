@@ -21,10 +21,7 @@
 			}
 		},
 		{
-			"contents": "Commands Summary.txt\n# commands used to create project in Docker project\n\n# create a Dockerfile for settings\ntouch Dockerfile\ntouch Gemfile\n\n# create a docker-compose.yml file for settings\ntouch docker-compose.yml\n\n# Run docker-compose to create new rails project\ndocker-compose run web rails new . --force --database=postgresql\n\ndocker-compose build\ndocker-compose up\n\n\n# commands for Rails app creation\n\ndocker-compost run web rails generate scaffold Surgeons firstname:string lastname:string email:string \n\ndocker-compose run web rails generate scaffold Patient mrn:string dob:date \n\ndocker-compose run web rails generate scaffold ICD10Code code:string description:string \n\ndocker-compose run web rails generate scaffold CPTCodes category:string code:string description:string\n\ndocker-compose run web rails generate scaffold Operations or_date:date surgeon:references patient:references\n\n\n\n# create the States scaffold\ndocker-compose run web rails generate scaffold States abbrev:string description:string\n\n\ndocker-compose run web rake db:migrate\n\n# rake seed command to populate database lookup tables\ndocker-compose run web rake db:seed\n",
 			"file": "Commands Summary.txt",
-			"file_size": 330,
-			"file_write_time": 131546898510000000,
 			"settings":
 			{
 				"buffer_size": 1142,
@@ -66,18 +63,6 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/charlesparkinson/development/egsdatabase",
-		"/Users/charlesparkinson/development/egsdatabase/app",
-		"/Users/charlesparkinson/development/egsdatabase/app/mailers",
-		"/Users/charlesparkinson/development/egsdatabase/app/models",
-		"/Users/charlesparkinson/development/egsdatabase/app/views",
-		"/Users/charlesparkinson/development/egsdatabase/app/views/cpt_codes",
-		"/Users/charlesparkinson/development/egsdatabase/config",
-		"/Users/charlesparkinson/development/egsdatabase/config/environments",
-		"/Users/charlesparkinson/development/egsdatabase/db",
-		"/Users/charlesparkinson/development/egsdatabase/db/migrate",
-		"/Users/charlesparkinson/development/egsdatabase/tmp",
-		"/Users/charlesparkinson/development/egsdatabase/tmp/pids"
 	],
 	"file_history":
 	[
@@ -168,8 +153,8 @@
 						"selection":
 						[
 							[
-								780,
-								780
+								889,
+								889
 							]
 						],
 						"settings":
@@ -226,7 +211,7 @@
 	"project": "egsdatabase.sublime-project",
 	"replace":
 	{
-		"height": 70.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
