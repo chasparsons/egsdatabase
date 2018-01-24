@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @complication.title %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @complication.area %>
+</p>
+
+<p>
+  <strong>Severity:</strong>
+  <%= @complication.severity %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @complication.comment %>
+</p>
+
+<p>
+  <strong>Operation:</strong>
+  <%= @complication.operation %>
+</p>
+
+<%= link_to 'Edit', edit_complication_path(@complication) %> |
+<%= link_to 'Back', complications_path %>

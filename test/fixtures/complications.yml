@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  area: MyString
+  severity: MyString
+  comment: MyText
+  operation: one
+
+two:
+  title: MyString
+  area: MyString
+  severity: MyString
+  comment: MyText
+  operation: two

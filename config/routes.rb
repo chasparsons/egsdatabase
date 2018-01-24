@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :op_code_links
+  resources :complications
   resources :cpt_codes
   resources :states
   resources :operations
