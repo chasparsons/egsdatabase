@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :complications
   resources :cpt_codes
+  resources :opcodes
+  resources :complications
   resources :states
   resources :operations
   resources :patients

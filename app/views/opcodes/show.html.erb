@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Operation:</strong>
+  <%= @opcode.operation %>
+</p>
+
+<p>
+  <strong>Cpt codes:</strong>
+  <%= @opcode.cpt_codes %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @opcode.order %>
+</p>
+
+<%= link_to 'Edit', edit_opcode_path(@opcode) %> |
+<%= link_to 'Back', opcodes_path %>

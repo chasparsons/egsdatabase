@@ -69,6 +69,6 @@ class CptCodesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cpt_code_params
-      params.require(:cpt_code).permit(:cats, :mouse, :description)
+      params.require(:cpt_code).permit(:area, :cptcode, :description)
     end
 end

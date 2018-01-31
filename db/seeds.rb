@@ -17,9 +17,21 @@ SmarterCSV.process('config/state_lookup.csv', options) do |chunk|
 	end
 end
 
-# Use smarter_csv to load cpt codes from csv file
-SmarterCSV.process('config/cpt_all.csv', options) do |chunk|
+cpt_code_check = CptCode.where(area: "AAA").first
+
+if cpt_code_check.nil?
+
+	# Use smarter_csv to load cpt codes from csv file
+	SmarterCSV.process('config/cpt_all.csv', options) do |chunk|
+		chunk.each do |data_hash|
+			CptCode.create!(data_hash)
+		end
+	end
+end
+
+# Use smarter_csv to load Surgeons from CSV file
+SmarterCSV.process('config/surgeon_lookup.csv', options) do |chunk|
 	chunk.each do |data_hash|
-		CptCode.create!(data_hash)
+		Surgeon.create!(data_hash)
 	end
 end

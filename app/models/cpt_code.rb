@@ -1,3 +1,2 @@
 class CptCode < ApplicationRecord
-	
 end

@@ -17,7 +17,7 @@ class CptCodesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create cpt_code" do
     assert_difference('CptCode.count') do
-      post cpt_codes_url, params: { cpt_code: { cats: @cpt_code.cats, description: @cpt_code.description, mouse: @cpt_code.mouse } }
+      post cpt_codes_url, params: { cpt_code: { area: @cpt_code.area, cptcode: @cpt_code.cptcode, description: @cpt_code.description } }
     end
 
     assert_redirected_to cpt_code_url(CptCode.last)
@@ -34,7 +34,7 @@ class CptCodesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update cpt_code" do
-    patch cpt_code_url(@cpt_code), params: { cpt_code: { cats: @cpt_code.cats, description: @cpt_code.description, mouse: @cpt_code.mouse } }
+    patch cpt_code_url(@cpt_code), params: { cpt_code: { area: @cpt_code.area, cptcode: @cpt_code.cptcode, description: @cpt_code.description } }
     assert_redirected_to cpt_code_url(@cpt_code)
   end
 

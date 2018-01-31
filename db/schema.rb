@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124181233) do
+ActiveRecord::Schema.define(version: 20180131175233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,11 +27,21 @@ ActiveRecord::Schema.define(version: 20180124181233) do
   end
 
   create_table "cpt_codes", force: :cascade do |t|
-    t.string   "cats"
-    t.string   "mouse"
+    t.string   "area"
+    t.string   "cptcode"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "opcodes", force: :cascade do |t|
+    t.integer  "operation_id"
+    t.integer  "cpt_codes_id"
+    t.integer  "order"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["cpt_codes_id"], name: "index_opcodes_on_cpt_codes_id", using: :btree
+    t.index ["operation_id"], name: "index_opcodes_on_operation_id", using: :btree
   end
 
   create_table "operations", force: :cascade do |t|
@@ -67,6 +77,8 @@ ActiveRecord::Schema.define(version: 20180124181233) do
   end
 
   add_foreign_key "complications", "operations"
+  add_foreign_key "opcodes", "cpt_codes", column: "cpt_codes_id"
+  add_foreign_key "opcodes", "operations"
   add_foreign_key "operations", "patients"
   add_foreign_key "operations", "surgeons"
 end
