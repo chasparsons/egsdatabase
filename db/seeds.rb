@@ -17,14 +17,14 @@ SmarterCSV.process('config/state_lookup.csv', options) do |chunk|
 	end
 end
 
-cpt_code_check = CptCode.where(area: "AAA").first
+cpt_code_check = Cpt.where(category: "AAA").first
 
 if cpt_code_check.nil?
 
 	# Use smarter_csv to load cpt codes from csv file
 	SmarterCSV.process('config/cpt_all.csv', options) do |chunk|
 		chunk.each do |data_hash|
-			CptCode.create!(data_hash)
+			Cpt.create!(data_hash)
 		end
 	end
 end

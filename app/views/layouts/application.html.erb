@@ -16,19 +16,15 @@
     	&nbsp; | &nbsp;
     	<%= link_to 'Operations', operations_path %>
     	&nbsp; | &nbsp;
-<<<<<<< HEAD
     	<%= link_to 'CPT', cpts_path %>
+      &nbsp; | &nbsp;
+      <%= link_to 'Complications', complications_path %>
       &nbsp; | &nbsp;
       <% if user_signed_in? %>
           <%= link_to('Logged in', edit_user_registration_path) %>
         <% else %>
           <%= link_to('Login', new_user_registration_path)  %>
       <% end %>
-=======
-    	<%= link_to 'CPT Codes', cpt_codes_path %>
-      &nbsp; | &nbsp;
-      <%= link_to 'Complications', complications_path %>
->>>>>>> d7457d94249adc4805dbc5ca27b6304c398cb1ac
     </div>
     <%= yield %>
     <div>

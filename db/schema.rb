@@ -26,30 +26,12 @@ ActiveRecord::Schema.define(version: 20190310030919) do
     t.index ["operation_id"], name: "index_complications_on_operation_id", using: :btree
   end
 
-  create_table "cpt_codes", force: :cascade do |t|
-    t.string   "area"
-    t.string   "cptcode"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "cpts", force: :cascade do |t|
     t.string   "category"
     t.string   "code"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "opcodes", force: :cascade do |t|
-    t.integer  "operation_id"
-    t.integer  "cpt_codes_id"
-    t.integer  "order"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["cpt_codes_id"], name: "index_opcodes_on_cpt_codes_id", using: :btree
-    t.index ["operation_id"], name: "index_opcodes_on_operation_id", using: :btree
   end
 
   create_table "operations", force: :cascade do |t|
@@ -97,8 +79,6 @@ ActiveRecord::Schema.define(version: 20190310030919) do
   end
 
   add_foreign_key "complications", "operations"
-  add_foreign_key "opcodes", "cpt_codes", column: "cpt_codes_id"
-  add_foreign_key "opcodes", "operations"
   add_foreign_key "operations", "patients"
   add_foreign_key "operations", "surgeons"
 end
