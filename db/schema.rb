@@ -10,20 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20190310030919) do
-=======
-ActiveRecord::Schema.define(version: 20180131175233) do
->>>>>>> d7457d94249adc4805dbc5ca27b6304c398cb1ac
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-  create_table "cpts", force: :cascade do |t|
-    t.string   "category"
-    t.string   "code"
-=======
   create_table "complications", force: :cascade do |t|
     t.string   "title"
     t.string   "area"
@@ -38,14 +29,19 @@ ActiveRecord::Schema.define(version: 20180131175233) do
   create_table "cpt_codes", force: :cascade do |t|
     t.string   "area"
     t.string   "cptcode"
->>>>>>> d7457d94249adc4805dbc5ca27b6304c398cb1ac
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-<<<<<<< HEAD
-=======
+  create_table "cpts", force: :cascade do |t|
+    t.string   "category"
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "opcodes", force: :cascade do |t|
     t.integer  "operation_id"
     t.integer  "cpt_codes_id"
@@ -56,7 +52,6 @@ ActiveRecord::Schema.define(version: 20180131175233) do
     t.index ["operation_id"], name: "index_opcodes_on_operation_id", using: :btree
   end
 
->>>>>>> d7457d94249adc4805dbc5ca27b6304c398cb1ac
   create_table "operations", force: :cascade do |t|
     t.date     "or_date"
     t.integer  "surgeon_id"
@@ -89,7 +84,6 @@ ActiveRecord::Schema.define(version: 20180131175233) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -102,11 +96,9 @@ ActiveRecord::Schema.define(version: 20180131175233) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-=======
   add_foreign_key "complications", "operations"
   add_foreign_key "opcodes", "cpt_codes", column: "cpt_codes_id"
   add_foreign_key "opcodes", "operations"
->>>>>>> d7457d94249adc4805dbc5ca27b6304c398cb1ac
   add_foreign_key "operations", "patients"
   add_foreign_key "operations", "surgeons"
 end

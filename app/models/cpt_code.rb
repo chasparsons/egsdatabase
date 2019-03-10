@@ -1,2 +1,0 @@
-class CptCode < ApplicationRecord
-end
