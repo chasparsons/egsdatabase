@@ -1,7 +1,7 @@
 class Patient < ApplicationRecord
 	
 	# create one-to-many association with operations
-	has_many :operations, dependent: :destroy
+	has_many :operations
 
 	# Validate the fields for having values
 	validates :mrn, :dob, presence: true

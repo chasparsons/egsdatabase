@@ -23,12 +23,13 @@ docker-compose run web rails generate scaffold Patient mrn:string dob:date
 
 docker-compose run web rails generate scaffold ICD10Code code:string description:string 
 
-docker-compose run web rails generate scaffold CPTCodes category:string code:string description:string
+docker-compose run web rails generate scaffold CPTCodes area:string cptcode:string description:string
 
-docker-compose run web rails generate scaffold Operations or_date:date surgeon:references patient:references
+docker-compose run web rails generate scaffold Operation or_date:date surgeon:references patient:references
 
-docker-compose run web rails generate scaffold OpCodeLink has_many:cptcode order:integer 
+docker-compose run web rails generate scaffold Complication title:string area:string severity:string comment:text operation:references
 
+docker-compose run web rails generate scaffold Opcode operation:references cpt_codes:references order:integer
 
 
 # create the States scaffold

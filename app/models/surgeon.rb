@@ -1,6 +1,8 @@
 class Surgeon < ApplicationRecord
 	# create one-to-many association with patients
 	has_many :patients
+
+	has_many :operations, dependent: :destroy
 	
 	# Validate the fields for having values
 	validates :firstname, :lastname, :email, presence: true, length: { minimum: 4 }

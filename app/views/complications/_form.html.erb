@@ -1,0 +1,42 @@
+<%= form_for(complication) do |f| %>
+  <% if complication.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(complication.errors.count, "error") %> prohibited this complication from being saved:</h2>
+
+      <ul>
+      <% complication.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :area %>
+    <%= f.text_field :area %>
+  </div>
+
+  <div class="field">
+    <%= f.label :severity %>
+    <%= f.text_field :severity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comment %>
+    <%= f.text_area :comment %>
+  </div>
+
+  <div class="field">
+    <%= f.label :operation_id %>
+    <%= f.text_field :operation_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -23,7 +23,8 @@
 
   <div class="field">
     <%= f.label :patient_id %>
-    <%= f.text_field :patient_id %>
+    <%= f.collection_select :patient_id, Patient.order(:mrn),:id ,:mrn %>
+      
   </div>
 
   <div class="actions">

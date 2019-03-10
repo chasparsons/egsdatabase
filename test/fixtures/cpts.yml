@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD:test/fixtures/cpts.yml
   category: MyString
   code: MyString
   description: MyString
@@ -8,4 +9,13 @@ one:
 two:
   category: MyString
   code: MyString
+=======
+  area: MyString
+  cptcode: MyString
+  description: MyString
+
+two:
+  area: MyString
+  cptcode: MyString
+>>>>>>> d7457d94249adc4805dbc5ca27b6304c398cb1ac:test/fixtures/cpt_codes.yml
   description: MyString

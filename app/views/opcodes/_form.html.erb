@@ -1,0 +1,32 @@
+<%= form_for(opcode) do |f| %>
+  <% if opcode.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(opcode.errors.count, "error") %> prohibited this opcode from being saved:</h2>
+
+      <ul>
+      <% opcode.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :operation_id %>
+    <%= f.text_field :operation_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cpt_codes_id %>
+    <%= f.text_field :cpt_codes_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :order %>
+    <%= f.number_field :order %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
