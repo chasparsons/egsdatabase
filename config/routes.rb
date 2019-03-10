@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root to: 'surgeons#index'
   
   resources :cpts
-  resources :opcodes
   resources :complications
   resources :states
   resources :operations
