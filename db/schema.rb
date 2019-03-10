@@ -10,27 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171111031057) do
+ActiveRecord::Schema.define(version: 20190310030919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cpt_codes", force: :cascade do |t|
-    t.string   "cats"
-    t.string   "mouse"
+  create_table "cpts", force: :cascade do |t|
+    t.string   "category"
+    t.string   "code"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "op_code_links", force: :cascade do |t|
-    t.integer  "cpt_code_id"
-    t.integer  "operation_id"
-    t.integer  "order"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["cpt_code_id"], name: "index_op_code_links_on_cpt_code_id", using: :btree
-    t.index ["operation_id"], name: "index_op_code_links_on_operation_id", using: :btree
   end
 
   create_table "operations", force: :cascade do |t|
@@ -65,8 +55,18 @@ ActiveRecord::Schema.define(version: 20171111031057) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "op_code_links", "cpt_codes"
-  add_foreign_key "op_code_links", "operations"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
   add_foreign_key "operations", "patients"
   add_foreign_key "operations", "surgeons"
 end

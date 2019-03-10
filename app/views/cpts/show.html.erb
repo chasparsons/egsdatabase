@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @cpt.category %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @cpt.code %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @cpt.description %>
+</p>
+
+<%= link_to 'Edit', edit_cpt_path(@cpt) %> |
+<%= link_to 'Back', cpts_path %>

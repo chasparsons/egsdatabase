@@ -1,10 +1,10 @@
-<%= form_for(cpt_code) do |f| %>
-  <% if cpt_code.errors.any? %>
+<%= form_for(cpt) do |f| %>
+  <% if cpt.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(cpt_code.errors.count, "error") %> prohibited this cpt_code from being saved:</h2>
+      <h2><%= pluralize(cpt.errors.count, "error") %> prohibited this cpt from being saved:</h2>
 
       <ul>
-      <% cpt_code.errors.full_messages.each do |message| %>
+      <% cpt.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :cats %>
-    <%= f.text_field :cats %>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
   </div>
 
   <div class="field">
-    <%= f.label :mouse %>
-    <%= f.text_field :mouse %>
+    <%= f.label :code %>
+    <%= f.text_field :code %>
   </div>
 
   <div class="field">

@@ -20,6 +20,6 @@ end
 # Use smarter_csv to load cpt codes from csv file
 SmarterCSV.process('config/cpt_all.csv', options) do |chunk|
 	chunk.each do |data_hash|
-		CptCode.create!(data_hash)
+		Cpt.create!(data_hash)
 	end
 end

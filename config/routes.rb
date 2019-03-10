@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :op_code_links
-  resources :cpt_codes
+  
+  devise_for :users
+  root to: 'surgeons#index'
+  
+  resources :cpts
   resources :states
   resources :operations
   resources :patients

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  cats: MyString
-  mouse: MyString
+  category: MyString
+  code: MyString
   description: MyString
 
 two:
-  cats: MyString
-  mouse: MyString
+  category: MyString
+  code: MyString
   description: MyString

@@ -16,7 +16,13 @@
     	&nbsp; | &nbsp;
     	<%= link_to 'Operations', operations_path %>
     	&nbsp; | &nbsp;
-    	<%= link_to 'CPT Codes', cpt_codes_path %>
+    	<%= link_to 'CPT', cpts_path %>
+      &nbsp; | &nbsp;
+      <% if user_signed_in? %>
+          <%= link_to('Logged in', edit_user_registration_path) %>
+        <% else %>
+          <%= link_to('Login', new_user_registration_path)  %>
+      <% end %>
     </div>
     <%= yield %>
     <div>

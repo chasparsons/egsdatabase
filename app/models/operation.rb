@@ -1,7 +1,7 @@
 class Operation < ApplicationRecord
   belongs_to :surgeon
   belongs_to :patient
-  #has_many :cpt_codes, through :op_code_links
+  has_and_belongs_to_many :cpts
 
   # Validate the fields
   

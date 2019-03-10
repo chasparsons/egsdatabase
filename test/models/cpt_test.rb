@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OpCodeLinkTest < ActiveSupport::TestCase
+class CptTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
