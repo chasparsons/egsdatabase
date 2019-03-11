@@ -24,9 +24,15 @@
   <div class="field">
     <%= f.label :patient_id %>
     <%= f.collection_select :patient_id, Patient.order(:mrn),:id ,:mrn %>
-      
   </div>
 
+  <%= fields_for(@cpt_operation) do |co| %>
+    <div class="field">
+    <%= co.label "All CPT" %><br />
+    <%= collection_select(:cpts, :id, @all_cpts ,:id, :code, {}, {:multiple => true}) %>
+    </div>
+  <% end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

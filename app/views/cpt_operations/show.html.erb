@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cpt:</strong>
+  <%= @cpt_operation.cpt_id %>
+</p>
+
+<p>
+  <strong>Operation:</strong>
+  <%= @cpt_operation.operation_id %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @cpt_operation.order %>
+</p>
+
+<%= link_to 'Edit', edit_cpt_operation_path(@cpt_operation) %> |
+<%= link_to 'Back', cpt_operations_path %>

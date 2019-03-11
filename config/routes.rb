@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :cpt_operations
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   root to: 'surgeons#index'

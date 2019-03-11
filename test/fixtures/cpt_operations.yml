@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cpt_id: 1
+  operation_id: 1
+  order: 1
+
+two:
+  cpt_id: 1
+  operation_id: 1
+  order: 1

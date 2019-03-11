@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cpt Operations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cpt</th>
+      <th>Operation</th>
+      <th>Order</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cpt_operations.each do |cpt_operation| %>
+      <tr>
+        <td><%= cpt_operation.cpt_id %></td>
+        <td><%= cpt_operation.operation_id %></td>
+        <td><%= cpt_operation.order %></td>
+        <td><%= link_to 'Show', cpt_operation %></td>
+        <td><%= link_to 'Edit', edit_cpt_operation_path(cpt_operation) %></td>
+        <td><%= link_to 'Destroy', cpt_operation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cpt Operation', new_cpt_operation_path %>

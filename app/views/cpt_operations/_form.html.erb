@@ -1,0 +1,32 @@
+<%= form_for(cpt_operation) do |f| %>
+  <% if cpt_operation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cpt_operation.errors.count, "error") %> prohibited this cpt_operation from being saved:</h2>
+
+      <ul>
+      <% cpt_operation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cpt_id %>
+    <%= f.number_field :cpt_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :operation_id %>
+    <%= f.number_field :operation_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :order %>
+    <%= f.number_field :order %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

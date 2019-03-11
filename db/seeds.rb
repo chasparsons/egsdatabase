@@ -10,7 +10,7 @@ require 'smarter_csv'
 
 options = {}
 
-if State.where(abbrev: "AK").first!
+#if !State.where(abbrev: "AK").first?
 
 	# Use smarter_csv to load states from csv file
 	SmarterCSV.process('config/state_lookup.csv', options) do |chunk|
@@ -18,11 +18,10 @@ if State.where(abbrev: "AK").first!
 			State.create!(data_hash)
 		end
 	end
-end
+#end
 
-cpt_code_check = Cpt.where(category: "AAA").first
 
-if cpt_code_check.nil?
+#if Cpt.where(category: "AAA").first?
 
 	# Use smarter_csv to load cpt codes from csv file
 	SmarterCSV.process('config/cpt_all.csv', options) do |chunk|
@@ -30,13 +29,13 @@ if cpt_code_check.nil?
 			Cpt.create!(data_hash)
 		end
 	end
-end
+#end
 
-if Surgeon.where(firstname: "Chas").first!
+#if Surgeon.all.nil?
 	# Use smarter_csv to load Surgeons from CSV file
-	SmarterCSV.process('config/surgeon_lookup.csv', options) do |chunk|
-		chunk.each do |data_hash|
-			Surgeon.create!(data_hash)
-		end
-	end
-end
+	#SmarterCSV.process('config/surgeon_lookup.csv', options) do |chunk|
+	#	chunk.each do |data_hash|
+	#		Surgeon.create!(data_hash)
+	#	end
+	#end
+#end

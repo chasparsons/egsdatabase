@@ -15,6 +15,10 @@ class OperationsController < ApplicationController
   # GET /operations/new
   def new
     @operation = Operation.new
+
+    @all_cpts = Cpt.all
+
+    @cpt_operation = @operation.cpt_operations.build
   end
 
   # GET /operations/1/edit
@@ -26,6 +30,11 @@ class OperationsController < ApplicationController
   def create
     @operation = Operation.new(operation_params)
 
+    params[:cpts][:id].each do |cpt|
+      if !cpt.empty?
+        @operation.cpt_operations.build(:cpt_id => cpt)
+      end
+    end
 
     respond_to do |format|
       if @operation.save
