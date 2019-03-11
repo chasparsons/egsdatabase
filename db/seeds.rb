@@ -10,10 +10,13 @@ require 'smarter_csv'
 
 options = {}
 
-# Use smarter_csv to load states from csv file
-SmarterCSV.process('config/state_lookup.csv', options) do |chunk|
-	chunk.each do |data_hash|
-		State.create!(data_hash)
+if State.where(abbrev: "AK").first!
+
+	# Use smarter_csv to load states from csv file
+	SmarterCSV.process('config/state_lookup.csv', options) do |chunk|
+		chunk.each do |data_hash|
+			State.create!(data_hash)
+		end
 	end
 end
 
@@ -29,9 +32,11 @@ if cpt_code_check.nil?
 	end
 end
 
-# Use smarter_csv to load Surgeons from CSV file
-SmarterCSV.process('config/surgeon_lookup.csv', options) do |chunk|
-	chunk.each do |data_hash|
-		Surgeon.create!(data_hash)
+if Surgeon.where(firstname: "Chas").first!
+	# Use smarter_csv to load Surgeons from CSV file
+	SmarterCSV.process('config/surgeon_lookup.csv', options) do |chunk|
+		chunk.each do |data_hash|
+			Surgeon.create!(data_hash)
+		end
 	end
 end
