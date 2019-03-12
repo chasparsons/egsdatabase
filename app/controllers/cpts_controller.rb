@@ -4,7 +4,8 @@ class CptsController < ApplicationController
   # GET /cpts
   # GET /cpts.json
   def index
-    @cpts = Cpt.all
+      @cpts = Cpt.all #no scope, gets all CPT records
+      @cpts = @cpts.category(params[:category]) if params[:category].present? 
   end
 
   # GET /cpts/1
@@ -59,6 +60,10 @@ class CptsController < ApplicationController
       format.html { redirect_to cpts_url, notice: 'Cpt was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def show_category 
+      @cpts = Cpt.where(:category => params[:category])
   end
 
   private
