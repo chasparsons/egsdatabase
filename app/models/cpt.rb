@@ -3,4 +3,5 @@ class Cpt < ApplicationRecord
 	has_many :operations, :through => :cpt_operations
 
 	scope :category, -> (category) { where category: category}
+	scope :code, -> (code) { where code: code}
 end

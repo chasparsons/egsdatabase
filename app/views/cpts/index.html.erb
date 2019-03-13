@@ -16,7 +16,7 @@
     <% @cpts.each do |cpt| %>
       <tr>
         <td><%= link_to cpt.category, :category => cpt.category %></td>
-        <td><%= cpt.code %></td>
+        <td><%= link_to cpt.code, :code => cpt.code %></td>
         <td><%= cpt.description %></td>
         <td><%= link_to 'Show', cpt %></td>
         <td><%= link_to 'Edit', edit_cpt_path(cpt) %></td>

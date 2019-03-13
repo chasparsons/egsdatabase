@@ -6,6 +6,7 @@ class CptsController < ApplicationController
   def index
       @cpts = Cpt.all #no scope, gets all CPT records
       @cpts = @cpts.category(params[:category]) if params[:category].present? 
+      @cpts = @cpts.code(params[:code]) if params[:code].present? 
   end
 
   # GET /cpts/1
@@ -62,9 +63,9 @@ class CptsController < ApplicationController
     end
   end
 
-  def show_category 
-      @cpts = Cpt.where(:category => params[:category])
-  end
+  #def show_category 
+  #    @cpts = Cpt.where(:category => params[:category])
+  #end
 
   private
     # Use callbacks to share common setup or constraints between actions.
