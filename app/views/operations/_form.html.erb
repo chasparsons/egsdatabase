@@ -26,19 +26,6 @@
     <%= f.collection_select :patient_id, Patient.order(:mrn),:id ,:mrn %>
   </div>
 
-  <div class="field">
-    <%= f.fields_for :cpts do |cpt_form| %>
-        <%= cpt_form.label :code %>
-        <%= cpt_form.text_field :code %>
- 
-        <%= cpt_form.label :category %>
-        <%= cpt_form.text_field :category %>
-
-        <%= cpt_form.label :description %>
-        <%= cpt_form.text_area :description %>
-        
-    <% end %>
-  </div>
   <% if !@cpt_operation.nil? %>
     <%= fields_for(@cpt_operation) do |co| %>
       <div class="field">
@@ -46,6 +33,19 @@
       <%= collection_select(:cpts, :id, @all_cpts ,:id, :code, {}, {:multiple => true}) %>
       </div>
     <% end %>
+    <% else %>
+      <div class="field">
+        <%= f.fields_for :cpts do |cpt_form| %>
+          <%= cpt_form.label :code %>
+          <%= cpt_form.text_field :code %>
+   
+          <%= cpt_form.label :category %>
+          <%= cpt_form.text_field :category %>
+
+          <%= cpt_form.label :description %>
+          <%= cpt_form.text_area :description %>
+        <% end %>
+    </div>
   <% end %>
   
 

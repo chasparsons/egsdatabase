@@ -2,14 +2,14 @@
 
 one:
   title: MyString
-  area: MyString
-  severity: MyString
+  area: 1
+  severity: 1
   comment: MyText
   operation: one
 
 two:
   title: MyString
-  area: MyString
-  severity: MyString
+  area: 1
+  severity: 1
   comment: MyText
   operation: two

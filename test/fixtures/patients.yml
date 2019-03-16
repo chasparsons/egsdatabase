@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  firstname: MyString
+  lastname: MyString
   mrn: MyString
-  dob: 2017-11-09
+  dob: 2019-03-16
 
 two:
+  firstname: MyString
+  lastname: MyString
   mrn: MyString
-  dob: 2017-11-09
+  dob: 2019-03-16

@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= f.label :area %>
-    <%= f.text_field :area %>
+    <%= f.collection_select :area, Complication.areas.map { |a| [a.first,a.first] },  :first, :second %>
   </div>
 
   <div class="field">
     <%= f.label :severity %>
-    <%= f.text_field :severity %>
+    <%= f.collection_select :severity, Complication.severities.map { |comp| [comp.first, comp.first]}, :first, :second %>
   </div>
 
   <div class="field">

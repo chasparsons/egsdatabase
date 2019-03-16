@@ -14,34 +14,25 @@ docker-compose run web rails new . --force --database=postgresql
 docker-compose build
 docker-compose up
 
-
-# commands for Rails app creation
-
-docker-compost run web rails generate scaffold Surgeons firstname:string lastname:string email:string 
-
-docker-compose run web rails generate scaffold Patient mrn:string dob:date 
-
-docker-compose run web rails generate scaffold ICD10Code code:string description:string 
-
-docker-compose run web rails generate scaffold CPTCodes area:string cptcode:string description:string
-
-docker-compose run web rails generate scaffold Operation or_date:date surgeon:references patient:references
-
-docker-compose run web rails generate scaffold Complication title:string area:string severity:string comment:text operation:references
-
-docker-compose run web rails generate scaffold Opcode operation:references cpt_codes:references order:integer
-
-
-# create the States scaffold
-docker-compose run web rails generate scaffold States abbrev:string description:string
-
-
+# create the database
 docker-compose run web rake db:migrate
 
 # rake seed command to populate database lookup tables
 docker-compose run web rake db:seed
 
+# commands for Rails app creation
+
+docker-compost run web rails generate scaffold Surgeons firstname:string lastname:string email:string 
+
+docker-compose run web rails generate scaffold Patient firstname:string lastname:string mrn:string dob:date 
+
+docker-compose run web rails generate scaffold Operation or_date:date surgeon:references patient:references
+
+docker-compose run web rails generate scaffold Complication title:string area:integer severity:integer comment:text operation:references
+
+# create the States scaffold
+docker-compose run web rails generate scaffold States abbrev:string description:string
 
 
-#still need to make sure deletes are cascading properly
+
 

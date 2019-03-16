@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190311040052) do
+ActiveRecord::Schema.define(version: 20190316183234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "complications", force: :cascade do |t|
     t.string   "title"
-    t.string   "area"
-    t.string   "severity"
+    t.integer  "area"
+    t.integer  "severity"
     t.text     "comment"
     t.integer  "operation_id"
     t.datetime "created_at",   null: false
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 20190311040052) do
   end
 
   create_table "patients", force: :cascade do |t|
+    t.string   "firstname"
+    t.string   "lastname"
     t.string   "mrn"
     t.date     "dob"
     t.datetime "created_at", null: false

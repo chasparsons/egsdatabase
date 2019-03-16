@@ -17,7 +17,7 @@ class PatientsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create patient" do
     assert_difference('Patient.count') do
-      post patients_url, params: { patient: { dob: @patient.dob, mrn: @patient.mrn } }
+      post patients_url, params: { patient: { dob: @patient.dob, firstname: @patient.firstname, lastname: @patient.lastname, mrn: @patient.mrn } }
     end
 
     assert_redirected_to patient_url(Patient.last)
@@ -34,7 +34,7 @@ class PatientsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update patient" do
-    patch patient_url(@patient), params: { patient: { dob: @patient.dob, mrn: @patient.mrn } }
+    patch patient_url(@patient), params: { patient: { dob: @patient.dob, firstname: @patient.firstname, lastname: @patient.lastname, mrn: @patient.mrn } }
     assert_redirected_to patient_url(@patient)
   end
 
