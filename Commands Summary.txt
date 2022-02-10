@@ -22,7 +22,7 @@ docker-compose run web rake db:seed
 
 # commands for Rails app creation
 
-docker-compost run web rails generate scaffold Surgeons firstname:string lastname:string email:string 
+docker-compose run web rails generate scaffold Surgeons firstname:string lastname:string email:string 
 
 docker-compose run web rails generate scaffold Patient firstname:string lastname:string mrn:string dob:date 
 
